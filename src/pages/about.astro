@@ -1,10 +1,39 @@
-<!DOCTYPE html>
+---
+const pageTitle = 'About me'
+const astroPage = 'Astro Page'
+
+const developer = {
+    name: 'Marvin',
+    age: 40,
+    origin: 'Col'
+}
+
+const reactDev = true
+const nodeDev = true
+const pythonDev = true
+const cDev = false
+
+const h1Mode = 'blue'
+const liMode = 'red'
+---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>{pageTitle}</title>
+    <style define:vars={{h1Mode, liMode}}>
+        h1{
+            color: var(--h1Mode)
+        }
+        li{
+            color: var(--liMode);
+            
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -15,6 +44,16 @@
         </ul>
     </nav>
 
-    <h1>About</h1>
+    <h1>{pageTitle}</h1>
+    <ul>
+        <li>{developer.name}</li>
+        <li>{developer.age}</li>
+        <li>{developer.origin}</li>
+    </ul>
+    <h3>{astroPage}</h3>
+
+    <h5>Condicional</h5>
+    { reactDev && <h4>Is a React dev</h4>}
+    { nodeDev && <h4>Is a Node dev</h4>}
 </body>
 </html>
