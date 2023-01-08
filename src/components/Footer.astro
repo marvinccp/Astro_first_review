@@ -1,0 +1,23 @@
+---
+import Social from "./Social.astro";
+
+const platform = 'github';
+const username = 'marvinccp'
+---
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+
+<footer>
+    <p>
+        learn more <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+        <Social platform="twitter" username="astrodotbuild" />
+  <Social platform="github" username="withastro" />
+  <Social platform="youtube" username="astrodotbuild" />
+    </p>
+</footer>
