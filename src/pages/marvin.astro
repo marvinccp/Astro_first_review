@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvin Berrio</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <a href="/"><li>Home</li></a>
-            <a href="/about"><li>About</li></a>
-            <a href="/marvin"><li>Marvin</li></a>
-        </ul>
-    </nav>
-    
-    <h1>Marvin Berrio</h1>
-    
-</body>
-</html>
+---
+import TopBarLayout from "../layouts/topBarLayout.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
+const pageTitle = 'Marvin Berrio'
+
+---
+<TopBarLayout />
+<BaseLayout pageTitle ={pageTitle}>
+<div>
+    <h1>Biografia</h1>
+</div>
+<div>
+    <h1>Imagen</h1>
+</div>
+<div>
+    <h1>Proyectos</h1>
+</div>
+</BaseLayout>

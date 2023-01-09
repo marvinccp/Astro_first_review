@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
-
+import Navigation from '../components/Navigation.astro'
+import TopBarLayout from '../layouts/topBarLayout.astro'
 const pageTitle = 'About me'
 const astroPage = 'Astro Page'
 
@@ -38,14 +39,10 @@ const liMode = 'red'
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <a href="/"><li>Home</li></a>
-            <a href="/about"><li>About</li></a>
-            <a href="/marvin"><li>Marvin</li></a>
-        </ul>
-    </nav>
-
+    <TopBarLayout>
+        <h5>Usando slot, es como el children en react</h5>
+    </TopBarLayout>
+    <Navigation />
     <h1>{pageTitle}</h1>
     <ul>
         <li>{developer.name}</li>
