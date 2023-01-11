@@ -1,0 +1,33 @@
+---
+import Greeting from "../../components/Greeting";
+import BaseLayout from "../../layouts/baseLayout.astro";
+const pageTitle = 'Tags Index'
+
+const allPost = await Astro.glob('../posts/*.md')
+const tags = [...new Set(allPost.map(post => post.frontmatter.tags).flat())]
+const messages = ["Hi", "Hello", "Howdy", "Hey there"]
+---
+<BaseLayout  pageTitle={pageTitle}>
+   <Greeting  client:load  messages={messages} />
+    <ul>
+        {
+            tags.map(tag =>(
+                <li><a href={`/tags/${tag}`}>{tag}</a></li>
+            ))
+        }
+    </ul>
+
+ 
+</BaseLayout>
+<style>
+    a{
+        text-decoration: none;
+        color: red;
+        font-size: 20px;
+    }
+    a:hover{
+        text-decoration: none;
+        color: rgb(17, 0, 255);
+        font-size: 20px;
+    }
+</style>
